@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet New People</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 100vh;
+      margin: 0;
+      background: #fff;
+    }
+
+    .illustration {
+      margin-top: 60px;
+      width: 260px;
+    }
+
+    h2 {
+      background: #ff5c5c;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 18px;
+      margin: 30px 0 10px;
+    }
+
+    p {
+      text-align: center;
+      max-width: 350px;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0 20px;
+    }
+
+    .bottom-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 20px 30px;
+      box-sizing: border-box;
+    }
+
+    .skip {
+      background: #b8b8b8;
+      border: none;
+      color: #292929;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 8px;
+      padding: 10px 26px;
+    }
+
+    .next {
+      background: #ff5c5c;
+      color: #fff;
+      border: none;
+      padding: 10px 26px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background: #ddd;
+      border-radius: 2px;
+    }
+
+    .dot.active {
+      background: #ff5c5c;
+    }
+  </style>
+</head>
+<body>
+  <img src="https://elements-resized.envatousercontent.com/elements-cover-images/17170584-6276-4884-a568-c81f88a63ed1?w=2038&cf_fit=scale-down&q=85&format=auto&s=e203ea40c647f93037f7731ccd4c70987a317c0ff6e612eb9f8dc23baf9ee64c" alt="Meet new people illustration" class="illustration" />
+
+  <h2>Meet New People</h2>
+  <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia tellus quis est pharetra fermentum. Curabitur dapibus neque id lacus hendrerit rhoncus. Vivamus quis pretium metus.
+Praesent varius tortor sit amet quam eleifend hendrerit. Vivamus pharetra ultrices diam vel volutpat. Praesent molestie lobortis sodales. Sed volutpat tempus orci.
+  </p>
+
+  <div class="bottom-nav">
+    <button class="skip">SKIP</button>
+
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot active"></div>
+      <div class="dot"></div>
+    </div>
+
+    <button class="next">NEXT</button>
+  </div>
+</body>
+</html>
