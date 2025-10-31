@@ -1,0 +1,48 @@
+body{
+   background-color: rgb(34, 0, 65);
+   color:azure;
+   font-family: Arial, sans-serif;
+   margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    color:burlywood;
+}
+
+a:link {
+    color:brown;
+}
+
+a:visited {
+    color:aqua;
+}
+
+a:hover {
+    color:aliceblue;
+}
+
+table {
+    width: 50%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: chocolate;
+    color:blue;
+}
+td:nth-child(1) {
+    background-color:chartreuse;
+    color:blue;
+}
+th:nth-child(2) {
+    background-color: rgb(48, 0, 144);
+    color: deeppink;
+}
