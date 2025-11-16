@@ -10,15 +10,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
       height: 100vh;
       margin: 0;
       background: #fff;
+      padding-bottom: 20px;
     }
 
     .illustration {
-      margin-top: 60px;
-      width: 260px;
+      margin-top: 30px;
+      width: 100%;
+      height: 40vh;
+      margin-bottom: 20px;
+      object-fit: contain;
     }
 
     h2 {
@@ -29,7 +32,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       font-size: 18px;
-      margin: 30px 0 10px;
+      margin: auto 0 20px;
     }
 
     p {
@@ -38,7 +41,7 @@
       color: #777;
       font-size: 14px;
       line-height: 1.5;
-      margin: 0 20px;
+      margin: 0 20px 40px;
     }
 
     .bottom-nav {
@@ -48,10 +51,11 @@
       width: 100%;
       padding: 20px 30px;
       box-sizing: border-box;
+      margin-top: auto;
     }
 
     .skip {
-      background: #b8b8b8;
+      background: #dcdcdc;
       border: none;
       color: #292929;
       font-size: 14px;
@@ -100,9 +104,9 @@ Praesent varius tortor sit amet quam eleifend hendrerit. Vivamus pharetra ultric
   <div class="bottom-nav">
     <button class="skip">SKIP</button>
 
-    <div class="dots">
-      <div class="dot"></div>
+    <div class="dots">      
       <div class="dot active"></div>
+      <div class="dot"></div>
       <div class="dot"></div>
     </div>
 
