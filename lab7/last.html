@@ -1,0 +1,124 @@
+<!-- // {/* <script src="big.js"></script>
+// <script src="small.js"></script> */}
+
+// //Виконається першим big.js, так як скрипт виокнується послідовно, зверху вниз.
+
+// var a = 2;
+// var x = 1 + (a *= 2);
+
+// console.log(x)
+// //Буде 5
+
+// // if ("0") {
+// //   alert('Привіт');
+// // }
+
+// //Так, бо 0 це непорождій рядок
+
+// let name = "Василь";
+// let admin = name;
+
+// console.log(admin); -->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>All-in-One</title>
+
+  <style>
+    #elid {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      position: relative;
+      left: 0;
+      transition: left 0.3s;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Пошук округу</h2>
+<input type="text" id="countyInput" placeholder="Введіть округ">
+<button onclick="handleSearch()">Знайти код</button>
+<div id="result"></div>
+
+<hr>
+
+<h2>Форма</h2>
+<form id="myForm">
+  <input type="text" id="first_name" placeholder="Ім'я"><br><br>
+  <input type="text" id="last_name" placeholder="Прізвище"><br><br>
+  <input type="email" id="email" placeholder="Email"><br><br>
+  <button type="submit">Відправити</button>
+</form>
+
+<hr>
+
+<h2>Анімація</h2>
+<button onclick="moveLeft()">Вліво</button>
+<button onclick="moveRight()">Вправо</button>
+
+<div id="elid"></div>
+
+<script>
+let counties = [];
+
+async function fetchCounties() {
+  const response = await fetch("https://api.census.gov/data/2020/acs/acs5/profile?get=NAME&for=county:*");
+  const data = await response.json();
+
+  counties = data.slice(1).map(item => ({
+    name: item[0],
+    state: item[1],
+    county: item[2],
+    code: item[1] + item[2]
+  }));
+}
+
+function getCountyCode(name) {
+  const found = counties.find(c => c.name === name);
+  return found ? found.code : "Не знайдено";
+}
+
+function handleSearch() {
+  const input = document.getElementById("countyInput").value;
+  const result = getCountyCode(input);
+  document.getElementById("result").innerText = result;
+}
+
+fetchCounties();
+
+document.getElementById("myForm").addEventListener("submit", function(event) {
+  const firstName = document.getElementById("first_name").value;
+  const lastName = document.getElementById("last_name").value;
+  const email = document.getElementById("email").value;
+
+  if (!firstName || !lastName || !email) {
+    alert("Будь ласка, заповніть всі поля!");
+    event.preventDefault();
+  } else {
+    alert(`Ім'я: ${firstName}\nПрізвище: ${lastName}\nEmail: ${email}`);
+  }
+});
+
+let position = 0;
+
+function moveLeft() {
+  position -= 100;
+  document.getElementById("elid").style.left = position + "px";
+}
+
+function moveRight() {
+  position += 100;
+  document.getElementById("elid").style.left = position + "px";
+}
+</script>
+
+</body>
+</html>
