@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f45827c-7ae6-408a-9c1b-7119e776f696" name="Changes" comment="" />
+    <list default="true" id="4f45827c-7ae6-408a-9c1b-7119e776f696" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +55,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\git\fisrthtml\lab8_nuxt" />
       <recent name="E:\git\fisrthtml" />
     </key>
   </component>
@@ -75,7 +78,7 @@
       <workItem from="1774605310266" duration="283000" />
       <workItem from="1775160919950" duration="231000" />
       <workItem from="1775161164168" duration="11000" />
-      <workItem from="1775161233749" duration="1361000" />
+      <workItem from="1775161233749" duration="3410000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;feat: add vueuse module&quot;">
       <option name="closed" value="true" />
