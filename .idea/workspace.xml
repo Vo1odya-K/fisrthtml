@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f45827c-7ae6-408a-9c1b-7119e776f696" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/nuxt-app/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/.github/workflows/ci.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/app/app.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/app/app.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/app/assets/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/app/components/AppLogo.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/app/components/TemplateMenu.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/app/pages/index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/eslint.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/nuxt.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/pnpm-lock.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/pnpm-workspace.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/renovate.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt-app/tsconfig.json" beforeDir="false" />
-    </list>
+    <list default="true" id="4f45827c-7ae6-408a-9c1b-7119e776f696" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +51,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\git\fisrthtml" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -90,7 +75,7 @@
       <workItem from="1774605310266" duration="283000" />
       <workItem from="1775160919950" duration="231000" />
       <workItem from="1775161164168" duration="11000" />
-      <workItem from="1775161233749" duration="1003000" />
+      <workItem from="1775161233749" duration="1361000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;feat: add vueuse module&quot;">
       <option name="closed" value="true" />
