@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4f45827c-7ae6-408a-9c1b-7119e776f696" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/nuxt-app/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/.github/workflows/ci.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/app/app.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/app/app.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/app/assets/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/app/components/AppLogo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/app/components/TemplateMenu.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/app/pages/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/eslint.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/nuxt.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/pnpm-lock.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/pnpm-workspace.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/renovate.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt-app/tsconfig.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Lab8/nuxt/nuxt-app" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Vo1odya-K&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Vo1odya-K/fisrthtml.git&quot;,
+    &quot;accountId&quot;: &quot;057f3531-c54c-4282-9660-2e25080b19f2&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="3BUxbgPukHleqOOpKCF61IWYHfC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "last_opened_file_path": "E:/git/fisrthtml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "E:\\git\\fisrthtml\\vue-lab\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "configurable.group.language",
+    "ts.external.directory.path": "E:\\git\\fisrthtml\\vue-lab\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3bd3a6803838-JavaScript-WS-261.22158.274" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4f45827c-7ae6-408a-9c1b-7119e776f696" name="Changes" comment="" />
+      <created>1774557525477</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1774557525477</updated>
+      <workItem from="1774557527438" duration="3778000" />
+      <workItem from="1774604151369" duration="1065000" />
+      <workItem from="1774605310266" duration="283000" />
+      <workItem from="1775160919950" duration="231000" />
+      <workItem from="1775161164168" duration="11000" />
+      <workItem from="1775161233749" duration="1003000" />
+    </task>
+    <task id="LOCAL-00001" summary="&quot;feat: add vueuse module&quot;">
+      <option name="closed" value="true" />
+      <created>1774560367599</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1774560367599</updated>
+    </task>
+    <task id="LOCAL-00002" summary="-">
+      <option name="closed" value="true" />
+      <created>1774560944906</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1774560944906</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;feat: add vueuse module&quot;" />
+    <MESSAGE value="-" />
+    <option name="LAST_COMMIT_MESSAGE" value="-" />
+  </component>
+</project>
