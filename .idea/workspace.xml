@@ -2,13 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f45827c-7ae6-408a-9c1b-7119e776f696" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nuxt/app/pages/subscription.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nuxt/app/pages/table.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nuxt/server/api/plans.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nuxt/server/api/subscription/create.post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/app/app.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/app/app.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/app/pages/products.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/app/pages/products.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/nuxt.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/nuxt.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,26 +49,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "E:/git/fisrthtml",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "E:\\git\\fisrthtml\\vue-lab\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "configurable.group.language",
-    "ts.external.directory.path": "E:\\git\\fisrthtml\\vue-lab\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/git/fisrthtml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;E:\\git\\fisrthtml\\vue-lab\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\git\\fisrthtml\\vue-lab\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\git\fisrthtml\lab8_nuxt" />
@@ -81,7 +96,11 @@
       <workItem from="1775161164168" duration="11000" />
       <workItem from="1775161233749" duration="3410000" />
       <workItem from="1775164736074" duration="207000" />
-      <workItem from="1775469951631" duration="1384000" />
+      <workItem from="1775469951631" duration="1742000" />
+      <workItem from="1776756979396" duration="1551000" />
+      <workItem from="1776762902201" duration="3188000" />
+      <workItem from="1776890492132" duration="2133000" />
+      <workItem from="1776893476821" duration="1321000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;feat: add vueuse module&quot;">
       <option name="closed" value="true" />

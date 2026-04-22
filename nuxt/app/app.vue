@@ -29,11 +29,26 @@ useSeoMeta({
   <UApp>
     <UHeader>
       <template #left>
-        <NuxtLink to="/">
-          <AppLogo class="w-auto h-6 shrink-0" />
+        <NuxtLink to="/" class="font-bold mr-4">
+          Головна
         </NuxtLink>
 
-        <TemplateMenu />
+        <NuxtLink to="/store" class="mr-4">
+          Store
+        </NuxtLink>
+
+        <UButton to="/products" variant="ghost">
+          Картки
+        </UButton>
+
+        <UButton to="/table" variant="ghost">
+          Таблиця
+        </UButton>
+
+        <UButton to="/subscription" variant="ghost">
+          Підписка
+        </UButton>
+
       </template>
 
       <template #right>
