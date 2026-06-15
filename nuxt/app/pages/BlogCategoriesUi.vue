@@ -18,37 +18,64 @@
       :columns="columns"
       :loading="pending"
       class="border border-gray-700 rounded-lg overflow-hidden bg-slate-800"
-    />
+    >
+      <template #actions-cell="{ row }">
+        <UDropdownMenu :items="getDropdownActions(row.original)">
+          <UButton
+            icon="i-heroicons-ellipsis-horizontal-20-solid"
+            color="neutral"
+            variant="ghost"
+            aria-label="Actions"
+          />
+        </UDropdownMenu>
+      </template>
+    </UTable>
 
     <div class="flex justify-center mt-6 border-t border-gray-700 pt-4">
       <UPagination
         :page="page"
         :items-per-page="perPage"
-        :total="totalItems"
+        :total="totalCategories"
         @update:page="onPageChange"
       />
     </div>
 
-    <UModal v-model="isOpen">
-      <div class="p-6 bg-slate-800 border border-gray-700 rounded-lg text-white">
+    <UModal v-model="isOpen"  v-if="isOpen" :portal="true">
+      <div class="p-6 bg-slate-800 border border-gray-700 rounded-lg text-white" @click.stop @focus.stop>
         <h3 class="text-lg font-bold text-emerald-400 mb-4">
           {{ isEditMode ? 'Редагувати категорію' : 'Створити категорію' }}
         </h3>
 
-        <UForm :schema="(schema as any)" :state="formState" @submit="onSubmit" class="space-y-4">
+        <UForm :state="formState" @submit="onSubmit" class="space-y-4">
           <div class="space-y-1">
             <label class="block text-sm font-medium text-gray-300">Назва категорії</label>
-            <UInput v-model="formState.title" placeholder="Введіть назву..." />
+            <UInput
+              v-model="formState.title"
+              placeholder="Введіть назву..."
+              autocomplete="one-time-code"
+              @keydown.stop
+            />
           </div>
 
           <div class="space-y-1">
             <label class="block text-sm font-medium text-gray-300">Слаг (Slug)</label>
-            <UInput v-model="formState.slug" placeholder="slug-category" />
+            <UInput
+              v-model="formState.slug"
+              placeholder="slug-category"
+              autocomplete="one-time-code"
+              @keydown.stop
+            />
           </div>
 
           <div class="space-y-1">
             <label class="block text-sm font-medium text-gray-300">Батьківська категорія (ID)</label>
-            <UInput v-model.number="formState.parent_id" type="number" placeholder="0 або ID" />
+            <UInput
+              v-model.number="formState.parent_id"
+              type="number"
+              placeholder="0 або ID"
+              autocomplete="one-time-code"
+              @keydown.stop
+            />
           </div>
 
           <div class="flex justify-end gap-3 pt-2">
@@ -62,101 +89,90 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, h } from 'vue';
-import { z } from 'zod';
+import { ref, computed } from 'vue';
 
-// 1. Схема валідації Zod
-const schema = z.object({
-  title: z.string().min(3, { message: 'Назва повинна мати мінімум 3 символи' }),
-  slug: z.string().min(3, { message: 'Слаг повинен мати мінімум 3 символи' }),
-  parent_id: z.number().int().optional().nullable()
-});
-
-// Визначаємо гнучкий інтерфейс для стану форми
-interface CategoryFormState {
-  id?: number;
+interface TableCategoryRow {
+  id: number;
   title: string;
   slug: string;
   parent_id: number | null;
+  parentTitle: string;
 }
 
-// Конфіг колонок таблиці
-const columns: Record<string, any>[] = [
-  { id: 'id', accessorKey: 'id', header: '#' },
-  { id: 'title', accessorKey: 'title', header: 'Назва' },
-  { id: 'slug', accessorKey: 'slug', header: 'Слаг' },
-  { id: 'parent', accessorKey: 'parent_title', header: 'Батьківська' },
-  {
-    id: 'actions',
-    header: 'Дії',
-    cell: ({ row }: any) => {
-      const items = [
-        [
-          {
-            label: 'Редагувати',
-            icon: 'i-heroicons-pencil-square-20-solid',
-            click: () => openModalForEdit(row.original)
-          },
-          {
-            label: 'Видалити',
-            icon: 'i-heroicons-trash-20-solid',
-            class: 'text-red-400 hover:text-red-300',
-            click: () => deleteCategory(row.original.id)
-          }
-        ]
-      ];
+const toast = useToast();
 
-      // Використовуємо рядкові назви для динамічного рендерингу компонентів через h()
-      // Це миттєво прибирає Cannot resolve symbol 'UDropdown'
-      return h(
-        'UDropdown',
-        { items, popper: { placement: 'bottom-start' } },
-        () => h('UButton', { color: 'gray', variant: 'ghost', icon: 'i-heroicons-ellipsis-horizontal-20-solid' })
-      );
-    }
-  }
+const columns = [
+  { accessorKey: 'id', header: '#' },
+  { accessorKey: 'title', header: 'Назва' },
+  { accessorKey: 'slug', header: 'Слаг' },
+  { accessorKey: 'parentTitle', header: 'Батьківська' },
+  { id: 'actions', header: 'Дії' }
 ];
 
-const categories = ref<any[]>([]);
+const categories = ref<any>([]);
 const page = ref(1);
-const totalItems = ref(0);
-const perPage = ref(25);
+const totalCategories = ref(0);
+const perPage = ref(5);
 const pending = ref(false);
 
 const isOpen = ref(false);
 const isEditMode = ref(false);
 const formPending = ref(false);
 
-const formState = ref<CategoryFormState>({
+const formState = ref({
+  id: undefined as number | undefined,
   title: '',
   slug: '',
-  parent_id: null
+  parent_id: null as number | null
 });
 
-const tableData = computed(() => {
+function getDropdownActions(row: TableCategoryRow) {
+  return [
+    [
+      {
+        label: 'Редагувати',
+        icon: 'i-heroicons-pencil-square-20-solid',
+        onSelect: () => openModalForEdit(row)
+      },
+      {
+        label: 'Видалити',
+        icon: 'i-heroicons-trash-20-solid',
+        color: 'danger' as const,
+        onSelect: () => deleteCategory(row.id)
+      }
+    ]
+  ];
+}
+
+const tableData = computed<TableCategoryRow[]>(() => {
   if (!Array.isArray(categories.value)) return [];
-  return categories.value.map(cat => ({
+
+  return categories.value.map((cat: Record<string, any>) => ({
     id: cat.id,
     title: cat.title,
-    slug: cat.slug,
+    slug: cat.slug || '—',
     parent_id: cat.parent_id,
-    parent_title: cat.parent_title || 'Немає'
+    parentTitle: cat.parent_category?.title || 'Немає'
   }));
 });
 
-const loadCategories = async () => {
+const loadData = async () => {
   pending.value = true;
   try {
     const timestamp = new Date().getTime();
-    // Явно кастимо url як string, щоб прибрати помилку NitroFetchOptions
-    const url = `http://localhost/api/admin/blog/categories?page=${page.value}&_t=${timestamp}` as string;
+    const url = `http://localhost/api/admin/blog/categories?page=${page.value}&_t=${timestamp}`;
     const response = await $fetch<any>(url);
 
-    categories.value = response.data || response;
-    totalItems.value = response.meta?.total || response.total || 0;
-    perPage.value = response.meta?.per_page || response.per_page || 25;
-  } catch (err) {
-    console.error("Помилка при завантаженні категорій:", err);
+    if (response && response.data) {
+      categories.value = response.data;
+    } else {
+      categories.value = Array.isArray(response) ? response : [];
+    }
+
+    totalCategories.value = response?.total || 0;
+    perPage.value = response?.per_page || 5;
+  } catch (error) {
+    console.error("Не вдалося завантажити категорії:", error);
   } finally {
     pending.value = false;
   }
@@ -164,17 +180,17 @@ const loadCategories = async () => {
 
 const openModalForCreate = () => {
   isEditMode.value = false;
-  formState.value = { title: '', slug: '', parent_id: null };
+  formState.value = { id: undefined, title: '', slug: '', parent_id: null };
   isOpen.value = true;
 };
 
-const openModalForEdit = (row: any) => {
+const openModalForEdit = (row: TableCategoryRow) => {
   isEditMode.value = true;
   formState.value = {
     id: row.id,
     title: row.title,
-    slug: row.slug,
-    parent_id: row.parent_id !== undefined ? row.parent_id : null
+    slug: row.slug === '—' ? '' : row.slug,
+    parent_id: row.parent_id
   };
   isOpen.value = true;
 };
@@ -182,23 +198,45 @@ const openModalForEdit = (row: any) => {
 const onSubmit = async () => {
   formPending.value = true;
   try {
-    if (isEditMode.value && formState.value.id) {
-      const url = `http://localhost/api/admin/blog/categories/${formState.value.id}` as string;
-      await $fetch<any>(url, {
-        method: 'PUT',
-        body: formState.value
-      } as any);
-    } else {
-      const url = 'http://localhost/api/admin/blog/categories' as string;
-      await $fetch<any>(url, {
-        method: 'POST',
-        body: formState.value
-      } as any);
-    }
+    const payload = {
+      title: formState.value.title,
+      slug: formState.value.slug,
+      parent_id: Number(formState.value.parent_id) || 0
+    };
+
+    const url = isEditMode.value
+      ? `http://localhost/api/admin/blog/categories/${formState.value.id}`
+      : 'http://localhost/api/admin/blog/categories';
+
+    const method = isEditMode.value ? 'PUT' : 'POST';
+
+    await $fetch<any>(url as string, {
+      method: method,
+      body: payload
+    } as any);
+
+    toast.add({
+      title: 'Успіх',
+      description: isEditMode.value ? 'Категорію оновлено!' : 'Категорію успішно створено!',
+      color: 'success'
+    });
+
     isOpen.value = false;
-    await loadCategories();
-  } catch (err) {
-    console.error("Помилка збереження форми:", err);
+    await loadData();
+  } catch (err: any) {
+    console.error("Помилка збереження:", err);
+    const laravelErrors = err.data?.errors;
+    let errorDescription = err.data?.message || 'Помилка валідації';
+
+    if (laravelErrors) {
+      errorDescription = Object.values(laravelErrors).flat().join(', ');
+    }
+
+    toast.add({
+      title: 'Помилка сервера (422)',
+      description: errorDescription,
+      color: 'danger'
+    });
   } finally {
     formPending.value = false;
   }
@@ -207,20 +245,26 @@ const onSubmit = async () => {
 const deleteCategory = async (id: number) => {
   if (!confirm('Ви впевнені, що хочете видалити цю категорію?')) return;
   try {
-    const url = `http://localhost/api/admin/blog/categories/${id}` as string;
-    await $fetch<any>(url, {
+    await $fetch<any>(`http://localhost/api/admin/blog/categories/${id}`, {
       method: 'DELETE'
     } as any);
-    await loadCategories();
-  } catch (err) {
-    console.error("Помилка при видаленні:", err);
+
+    toast.add({
+      title: 'Успіх',
+      description: 'Категорію видалено успішно!',
+      color: 'success'
+    });
+
+    await loadData();
+  } catch (error) {
+    console.error("Помилка при видаленні:", error);
   }
 };
 
 const onPageChange = (newPage: number) => {
   page.value = newPage;
-  loadCategories();
+  loadData();
 };
 
-loadCategories();
+loadData();
 </script>
